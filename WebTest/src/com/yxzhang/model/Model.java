@@ -5,7 +5,7 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 
 /**
- * @author acer1
+ * @author acer11
  *Ë®Á¿¼ÆËã	
  */
 public class Model {
