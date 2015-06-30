@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>北京自来水集团工艺平台</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        body{
+            background: #afd9ee;
+        }
+        .myPage {
+            font-family: '微软雅黑','Source Sans Pro';
+            font-size: 15px;
+            background:url("image/bg03.jpg") no-repeat;
+            background-size:1340px 800px ;
+            width: 1332px;
+            margin:0px auto;
+        }
+
+        .page-head .navbar{
+            opacity: 0.75;
+        }
+        .sidebar {
+            height: 657px;
+            margin-top: -20px;
+            padding-top: 10px;
+            opacity: 0.75;
+            background: #66afe9;
+
+        }
+        .sidebar a{
+            color: #000000;
+            margin-top: 2px;
+        }
+        /*.sidebar ul{*/
+            /*border-bottom: solid 1px #225599;*/
+        /*}*/
+        .sidebar a:hover{
+           color:blue;
+        }
+        .page-user {
+            padding-top: 4px;
+        }
+
+        .navbar-brand {
+            padding-top: 10px;
+        }
+        .sidebar a:hover{
+            background: #f5f5dc;
+        }
+        a {
+            margin-left: 10px;
+        }
+
+        .son-index {
+            margin-left: 25px;
+        }
+        .start_play{
+            position: relative;
+            left:480px;
+            top: 260px;
+            color: #ffffff;
+            opacity: 0.9;
+        }
+        #readout{
+            position: absolute;
+            top: 400px;
+            left: 600px;
+            font-size: 25px;
+        }
+        #myContent{
+            margin: -20px -30px -20px -30px;
+        }
+        #p_pingtai{
+            font-family: '微软雅黑','Arial';
+            font-size: 39px;
+            color: #eeeeee;
+            position: absolute;
+            top: 110px;
+            left: 350px;
+            opacity: 0.85;
+        }
+        #pageFooter{
+            background: #e5e5e5;
+        }
+        #pageFooter p{
+            font-family: '微软雅黑','Arial';
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="myPage">
+    <div class="page-head">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="navbar-top" type="button">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="image/logo.png" height="30" width="30" style="display: inline">
+                        <span style="font-size:24px">北京市自来水集团</span>
+                    </a>
+                </div>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group form-group-sm">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default btn-sm">搜索</button>
+                </form>
+                <div class="page-user" id="collapse-top">
+                    <ul class="nav nav-pills pull-right " role="navigation">
+                        <li class="active"><a href="#">登陆</a></li>
+                        <li><a href="#">注册</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="sidebar">
+                <div class="navbar navbar-collapse">
+                    <ul class="nav nav-pills nav-stacked ">
+                        <li role="presentation" class="dropdown"><a class="dropdown-toggle  collapse" data-toggle="collapse"
+                                                                    role="button" href="#myUl"><i class="fa fa-home"></i>&nbsp;首页<span
+                                class="caret"></span> </a>
+                            <ul class="nav collapse in panel-collapse" id="myUl">
+                                <li><a class="son-index" href="#1" onclick="f_mainView()">厂区平面图</a></li>
+                                <li><a class="son-index " href="#1">开始演示</a></li>
+                                <li><a class="son-index " href="#1">停止演示</a></li>
+                                <li><a class=" son-index" href="#1">部件检索</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider nav-divider"></li>
+                        <li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="collapse"
+                                                                    role="button" href="#myUl1"><i class="fa fa-cog"></i>&nbsp;水量调控<span
+                                class="caret"></span> </a>
+                            <ul class="nav collapse panel-collapse " id="myUl1">
+                                <li><a class="son-index" href="#1">关闭部件</a></li>
+                                <li><a class="son-index" href="#1">关闭系列</a></li>
+                                <li><a class="son-index" href="#1">进排水模拟</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider nav-divider"></li>
+                        <li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="collapse"
+                                                                    role="button" href="#myUl2"><i
+                                class="fa fa-bar-chart"></i>&nbsp;数据统计<span class="caret"></span> </a>
+                            <ul class="nav collapse panel-collapse " id="myUl2">
+                                <li><a class="son-index" href="#1">数据查询</a></li>
+                                <li><a class="son-index" href="#1">数据导出</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider nav-divider"></li>
+                        <li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="collapse"
+                                                                    role="button" href="#myUl3"><i class="fa fa-wrench"></i>&nbsp;施工维修<span
+                                class="caret"></span> </a>
+                            <ul class="nav collapse panel-collapse " id="myUl3">
+                                <li><a class="son-index" href="#1">部件维修仿真</a></li>
+                                <li><a class="son-index" href="#1">施工方案导出</a></li>
+                                <li><a class="son-index" href="#1">已有施工方案演示</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider nav-divider"></li>
+                        <li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="collapse"
+                                                                    role="button" href="#myUl4"><i class="fa fa-medkit"></i>&nbsp;在线编辑<span
+                                class="caret"></span> </a>
+                            <ul class="nav collapse panel-collapse " id="myUl4">
+                                <li><a class="son-index" href="#1">现有工艺线编辑</a></li>
+                                <li><a class="son-index" href="#1">历史编辑记录欻性能</a></li>
+                            </ul>
+                        </li>
+                        <li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="collapse"
+                                                                    role="button" href="#myUl5"><i class="fa fa-medkit"></i>&nbsp;系统管理<span class="caret"></span> </a>
+                            <ul class="nav collapse panel-collapse " id="myUl5">
+                                <li><a class="son-index" href="#1">个人中心</a></li>
+                                <li><a class="son-index" href="#1">用户管理中心</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider nav-divider"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-10 myContent" id="myContent">
+            <div id="p_pingtai">
+                北京自来水集团仿真平台
+            </div>
+            <a class="start_play btn-info btn-lg" type="button" id="StartPlay">进入</a>
+            <div id="myQuShui" style="display: none">
+                <canvas id="ShuiChi" width="1300" height="800"></canvas>
+                <div id="readout"></div>
+            </div>
+        </div>
+    </div>
+    <footer id="pageFooter">
+        <p> 2008版权所有　北京市自来水集团有限责任公司 2638841</p>
+        <p>地址：中国 北京市西城区宣武门西大街甲121号　邮编：100031　中文域名：北京京水集团</p>
+        <p>总机电话：010-66410088　客服中心：96116 稽查电话:010-64036465  朝阳营销分公司服务信箱Cy638@sina.com</p>
+        <p>京ICP备11045158号   京公网安备110401400037号</p>
+    </footer>
+
+</div>
+<script src="js/myJs.js"></script>
+<!--<script src="js/SC.js"></script>-->
+</body>
+</html>
