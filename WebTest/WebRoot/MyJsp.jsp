@@ -1,14 +1,9 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=gb2312" pageEncoding="utf-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="<%=basePath%>">
     
-    <title>My JSP 'MyJsp.jsp' starting page</title>
+    <title>包含文本我文件</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -20,22 +15,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 
   </head>
-  
   <body>
-	<%
-		out.println("<table border=\"1\">");
-		out.println("<tr>");
-		for(int n=1;n<=3;n++){
-			out.println("<th>表头"+n+"</th>");
-		}
-		out.println("</tr>");
-		for(int n=1;n<=2;n++){
-			out.println("<tr>");
-			for(int m=1;m<=3;m++){
-			out.println("<td>&nbsp;</td>");
-		}
-		out.println("</tr>");
-		}
-	 %>
+	包含文本文件，内容如下：<br>
+	<%@ include file="content.txt"%>
   </body>
 </html>
